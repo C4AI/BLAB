@@ -4,14 +4,16 @@ This repository provides an overview of BLAB (BLue Amazon Brain) and its compone
 BLAB has not been deployed to production, but its source is
 available and you can install it on your PC or server.
 
-BLAB is managed by a central controller, [BLAB Controller](../../../blab-controller), developed in Python. See the
-file [INSTALL.md](../../../blab-controller/blob/main/INSTALL.md)
-for installation instructions.
-
 BLAB Portal is a website that provides access to chatbots and other services. Its repository
 is [BLAB Front-end](../../../blab-frontend), and it was developed with React Framework.
 See [README.md](../../../blab-frontend/blob/main/README.md) in that repository
 for installation instructions. 
+
+### BLAB-Chat
+
+BLAB is managed by a central controller, [BLAB Controller](../../../blab-controller), developed in Python. See the
+file [INSTALL.md](../../../blab-controller/blob/main/INSTALL.md)
+for installation instructions.
 
 The controller contains two basic bots (ECHO and Calculator) for demonstration purposes. In order to integrate other
 bots, see
@@ -27,3 +29,14 @@ So far, we have written the intermediate layers to integrate BLAB Controller wit
    data for the retriever.
 
 If you want to integrate other bots with BLAB, see [this generic example](../../../blab-chatbot-example).
+
+
+### BLAB-Reporter
+
+See the repository [BLAB Reporter](https://github.com/C4AI/blab-reporter).
+
+### BLAB-Wiki
+
+TO DO
+
+
