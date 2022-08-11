@@ -5,17 +5,17 @@ BLAB has not been deployed to production, but its source is
 available and you can install it on your PC or server.
 
 BLAB is managed by a central controller, [BLAB Controller](../../../blab-controller), developed in Python. See the
-file [INSTALL.md](../../../blab-controller/INSTALL.md)
+file [INSTALL.md](../../../blab-controller/blob/main/INSTALL.md)
 for installation instructions.
 
 BLAB Portal is a website that provides access to chatbots and other services. Its repository
 is [BLAB Front-end](../../../blab-frontend), and it was developed with React Framework.
-See [BLAB Front-end](../../../blab-frontend/README.md)
+See [BLAB Front-end](../../../blab-frontend/blob/main/README.md)
 for installation instructions. 
 
 The controller contains two basic bots (ECHO and Calculator) for demonstration purposes. In order to integrate other
 bots, see
-[these instructions](../../../blab-controller/ADDING_BOTS.md).
+[these instructions](../../../blab-controller/blob/main/ADDING_BOTS.md).
 
 So far, we have written the intermediate layers to integrate BLAB Controller with:
 
