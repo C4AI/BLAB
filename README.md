@@ -10,7 +10,7 @@ for installation instructions.
 
 BLAB Portal is a website that provides access to chatbots and other services. Its repository
 is [BLAB Front-end](../../../blab-frontend), and it was developed with React Framework.
-See [BLAB Front-end](../../../blab-frontend/blob/main/README.md)
+See [README.md](../../../blab-frontend/blob/main/README.md) in that repository
 for installation instructions. 
 
 The controller contains two basic bots (ECHO and Calculator) for demonstration purposes. In order to integrate other
