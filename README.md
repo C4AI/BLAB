@@ -26,7 +26,8 @@ So far, we have written the intermediate layers to integrate BLAB Controller wit
    access the Watson assistants (see [documentation from IBM](https://cloud.ibm.com/apidocs/assistant-v2)).
 2. [DEEPAGÉ](../../../deepage):
    See the repository [DEEPAGÉ bot for BLAB](../../../blab-chatbot-deepage). You will need the trained model and the
-   data for the retriever.
+   data for the retriever.<br/>You can read the DEEPAGÉ articles: [arXiv](https://doi.org/10.48550/arXiv.2110.10015),
+   [BRACIS 2021](https://doi.org/10.1007/978-3-030-91699-2_29).
 
 If you want to integrate other bots with BLAB, see [this generic example](../../../blab-chatbot-example).
 
