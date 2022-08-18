@@ -34,7 +34,10 @@ If you want to integrate other bots with BLAB, see [this generic example](../../
 
 ### BLAB-Reporter
 
-See the repository [BLAB Reporter](https://github.com/C4AI/blab-reporter).
+BLAB Reporter is a bot that automatically generates news articles using multiple sources.
+See the repository [BLAB Reporter](https://github.com/C4AI/blab-reporter) and
+the [Twitter profile](https://twitter.com/BLAB_Reporter) in which the generated texts 
+are published.
 
 ### BLAB-Wiki
 
