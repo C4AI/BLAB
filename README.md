@@ -34,13 +34,16 @@ If you want to integrate other bots with BLAB, see [this generic example](../../
 
 ### BLAB-Reporter
 
-BLAB Reporter is a bot that automatically generates news articles using multiple sources.
+BLAB-Reporter is a bot that automatically generates news articles using multiple sources.
 See the repository [BLAB Reporter](https://github.com/C4AI/blab-reporter) and
 the [Twitter profile](https://twitter.com/BLAB_Reporter) in which the generated texts 
 are published.
 
 ### BLAB-Wiki
 
-TO DO
+BLAB-Wiki is a set of curated texts about the Blue Amazon. They have been written by undergraduate Oceanography students
+and revised by experts. 
+
+A [preliminary version](http://c2dt02.duckdns.org/w) of the texts is publicly available.
 
 
