@@ -36,6 +36,8 @@ So far, we have written the intermediate layers to integrate BLAB Controller wit
 1. [Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant):
    see the repository [Watson Assistant bot for BLAB](../../../blab-chatbot-watson). You will need the credentials to
    access the Watson assistants (see [documentation from IBM](https://cloud.ibm.com/apidocs/assistant-v2)).
+
+
 2. [DEEPAGÉ](../../../deepage): A question answering system focused on the Portuguese language, combining in novel ways
    the BM25 algorithm, a sparse retrieval technique, with PTT5, a pre-trained state-of-the-art language model. See the
    repository [DEEPAGÉ bot for BLAB](../../../blab-chatbot-deepage). You will need the trained model and the data for
@@ -46,6 +48,7 @@ If you want to integrate other bots with BLAB, see [this generic example](../../
 ### 1.2 BLAB-Reporter
 
 [BLAB Reporter](https://github.com/C4AI/blab-reporter) is an application that collects data related to the Blue Amazon
+from multiple sources
 and publishes it on Twitter ([@BLAB_Reporter](https://twitter.com/BLAB_Reporter))
 in natural language (Portuguese).
 
@@ -54,6 +57,7 @@ in natural language (Portuguese).
 BLAB-Wiki is a set of curated texts in Portuguese about the Blue Amazon that can be used as a resource to build
 conversational agents. They have been written by undergraduate Oceanography students and revised by experts. Some of the
 texts are available at [a temporary server](https://c2dt02.duckdns.org/w/index.php) (only preliminary versions).
+
 
 ## 2. Published papers
 
