@@ -46,6 +46,16 @@ title BLAB - Container Diagram
     System_Ext(haystack, "Haystack")
     System_Ext(rasa, "Rasa")
 
+    System_Ext(deepage_fsp, "Folha de S. Paulo")
+    System_Ext(deepage_o_globo, "O Globo")
+    System_Ext(deepage_estadao, "Estadão")
+    System_Ext(deepage_wikipedia, "Wikipédia")
+
+    Rel_U(deepage_fsp, deepage, "news articles")
+    Rel_U(deepage_o_globo, deepage, "news articles")
+    Rel_U(deepage_estadao, deepage, "news articles")
+    Rel_U(deepage_wikipedia, deepage, "encyclopedia articles")
+
     BiRel(blab_frontend, blab_controller, "messages", "WebSocket, HTTP(S)")
     BiRel(human_robotics_robot, human_robotics_server, "messages", "WebSocket, HTTP(S)")
     BiRel(human_robotics_server, blab_client_human_robotics, "messages", "HTTP(S)")
