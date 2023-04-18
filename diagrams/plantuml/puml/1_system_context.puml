@@ -1,0 +1,38 @@
+@startuml
+
+title BLAB - System Context Diagram
+!include ../../../.lib/C4_Container.puml
+
+    skinparam backgroundColor #CCCCCC
+
+    Person(user, "User")
+
+    Boundary(b, "BLAB") {
+
+        System(blab_frontend, "BLAB Frontend")
+        System(blab_chat, "BLAB Chat")
+        System(blab_reporter, "BLAB Reporter")
+        System(blab_wiki, "BLAB Wiki")
+    }
+
+    System_Ext(human_robotics, "Human Robotics robot/avatar")
+
+    System_Ext(data_sources, "Data sources")
+    System_Ext(language_models, "Language models")
+
+    BiRel(human_robotics, blab_chat, "messages")
+    BiRel(blab_frontend, blab_chat, "messages")
+    Rel_U(blab_reporter, blab_frontend, "tweets")
+    Rel_U(blab_wiki, blab_frontend, "texts")
+    Rel_U(data_sources, blab_reporter, "")
+    BiRel_U(language_models, blab_chat, "")
+
+    BiRel(user, blab_frontend, "")
+    BiRel(user, human_robotics, "")
+
+
+    LAYOUT_LEFT_RIGHT()
+
+
+
+@enduml

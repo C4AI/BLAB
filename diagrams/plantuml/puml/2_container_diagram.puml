@@ -1,0 +1,95 @@
+@startuml
+
+title BLAB - Container Diagram
+!include ../../../.lib/C4_Container.puml
+
+    skinparam backgroundColor #CCCCCC
+
+    Person(user, "User")
+
+    Boundary(b, "BLAB") {
+
+        System(blab_frontend, "BLAB Frontend")
+
+        System_Boundary(blab_chat, "BLAB Chat") {
+            Container(blab_controller, "BLAB Controller")
+            Container(blab_client_human_robotics, "BLAB Client for Human Robotics")
+            Container(blab_chatbot_deepage, "BLAB Bot Client for DEEPAGÉ")
+            Container(blab_chatbot_haystack, "BLAB Bot Client for Haystack")
+            Container(blab_chatbot_watson, "BLAB Bot Client for Watson Assistant")
+            Container(blab_chatbot_openai, "BLAB Bot Client for OpenAI")
+            Container(blab_chatbot_rasa, "BLAB Bot Client for Rasa")
+            Container(blab_chatbot_example, "BLAB Bot Client - Example")
+
+            ContainerDb(blab_controller_database, "BLAB database")
+
+        }
+        System(blab_reporter, "BLAB Reporter")
+        System(blab_wiki, "BLAB Wiki")
+    }
+
+    System_Ext(human_robotics_robot, "Human Robotics robot/avatar")
+    System_Ext(human_robotics_server, "Human Robotics server")
+
+    System_Ext(google_news, "Google News")
+    System_Ext(tideschart, "Tideschart")
+    System_Ext(marine_traffic, "Marine Traffic")
+    System_Ext(mar_sem_fim, "Mar Sem Fim")
+    System_Ext(sismologia_usp, "Centro de Sismologia da USP")
+
+    System_Ext(openai_server, "OpenAI server")
+    System_Ext(watson_server, "IBM Watson server")
+    System_Ext(deepage, "DEEPAGÉ")
+    System_Ext(haystack, "Haystack")
+    System_Ext(rasa, "Rasa")
+
+    BiRel(blab_frontend, blab_controller, "messages", "WebSocket, HTTP(S)")
+    BiRel(human_robotics_robot, human_robotics_server, "messages", "WebSocket, HTTP(S)")
+    BiRel(human_robotics_server, blab_client_human_robotics, "messages", "HTTP(S)")
+    BiRel(blab_client_human_robotics, blab_controller, "messages", "WebSocket")
+    BiRel(blab_chatbot_deepage, blab_controller, "messages", "WebSocket")
+    BiRel(blab_chatbot_haystack, blab_controller, "messages", "WebSocket")
+    BiRel(blab_chatbot_watson, blab_controller, "messages", "WebSocket")
+    BiRel(blab_chatbot_openai, blab_controller, "messages", "WebSocket")
+    BiRel(blab_chatbot_rasa, blab_controller, "messages", "WebSocket")
+    BiRel(blab_chatbot_example, blab_controller, "messages", "WebSocket")
+    Rel_U(blab_reporter, blab_frontend, "tweets")
+    Rel_U(blab_wiki, blab_frontend, "texts")
+
+    BiRel(blab_chatbot_deepage, deepage, "messages")
+    BiRel(blab_chatbot_haystack, haystack, "messages")
+    BiRel(blab_chatbot_watson, watson_server, "messages", "HTTPS")
+    BiRel(blab_chatbot_openai, openai_server, "messages", "HTTPS")
+    BiRel(blab_chatbot_rasa, rasa, "messages")
+
+    Rel_U(google_news, blab_reporter, "")
+    Rel_U(tideschart, blab_reporter, "")
+    Rel_R(marine_traffic, blab_reporter, "")
+    Rel_D(mar_sem_fim, blab_reporter, "")
+    Rel_D(sismologia_usp, blab_reporter, "")
+
+
+
+    BiRel(user, blab_frontend, "messages")
+    BiRel(user, human_robotics_robot, "messages")
+
+    BiRel_L(blab_controller, blab_controller_database, "data", "SQL, Django models")
+
+
+    Lay_R(blab_controller, blab_chatbot_haystack)
+    Lay_R(blab_chatbot_haystack, blab_chatbot_watson)
+    Lay_R(blab_chatbot_watson, blab_chatbot_rasa)
+    Lay_R(blab_chatbot_rasa, blab_chatbot_deepage)
+    Lay_R(blab_chatbot_deepage, blab_chatbot_openai)
+
+    Lay_U(blab_chatbot_haystack, haystack)
+    Lay_U(blab_chatbot_deepage, deepage)
+    Lay_U(blab_chatbot_rasa, rasa)
+    Lay_U(blab_chatbot_watson, watson_server)
+    Lay_U(blab_chatbot_openai, openai_server)
+
+    Lay_Distance(blab_controller_database, blab_chatbot_watson, 1)
+
+    UpdateElementStyle("container", $borderColor="darkblue")
+    SHOW_FLOATING_LEGEND()
+@enduml

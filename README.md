@@ -4,6 +4,14 @@ This repository provides an overview of BLAB (BLue Amazon Brain) and its compone
 production at the time of writing, but its source is available and you can install some or all of its components on your
 PC or server.
 
+
+
+<img src="diagrams/plantuml/svg/1_system_context.svg" />
+<br /><br />
+<img src="diagrams/plantuml/svg/2_container_diagram.svg" />
+
+
+
 BLAB Portal is a website that provides access to chatbots and other services. Its repository
 is [BLAB Front-end](../../../blab-frontend), and it was developed with React Framework.
 See [README.md](../../../blab-frontend/blob/main/README.md) in that repository for installation instructions.
