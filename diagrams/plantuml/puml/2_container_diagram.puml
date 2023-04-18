@@ -11,9 +11,11 @@ title BLAB - Container Diagram
 
         System(blab_frontend, "BLAB Frontend")
 
+        Container(blab_client_human_robotics, "BLAB Client for Human Robotics")
+
         System_Boundary(blab_chat, "BLAB Chat") {
             Container(blab_controller, "BLAB Controller")
-            Container(blab_client_human_robotics, "BLAB Client for Human Robotics")
+
             Container(blab_chatbot_deepage, "BLAB Bot Client for DEEPAGÉ")
             Container(blab_chatbot_haystack, "BLAB Bot Client for Haystack")
             Container(blab_chatbot_watson, "BLAB Bot Client for Watson Assistant")
@@ -30,6 +32,7 @@ title BLAB - Container Diagram
 
     System_Ext(human_robotics_robot, "Human Robotics robot/avatar")
     System_Ext(human_robotics_server, "Human Robotics server")
+    System_Ext(blab_reporter_twitter, "Twitter server", "@BLAB_Reporter")
 
     System_Ext(google_news, "Google News")
     System_Ext(tideschart, "Tideschart")
@@ -53,7 +56,8 @@ title BLAB - Container Diagram
     BiRel(blab_chatbot_openai, blab_controller, "messages", "WebSocket")
     BiRel(blab_chatbot_rasa, blab_controller, "messages", "WebSocket")
     BiRel(blab_chatbot_example, blab_controller, "messages", "WebSocket")
-    Rel_U(blab_reporter, blab_frontend, "tweets")
+    Rel_U(blab_reporter, blab_reporter_twitter, "tweets")
+    Rel_U(blab_reporter_twitter, blab_frontend, "tweets")
     Rel_U(blab_wiki, blab_frontend, "texts")
 
     BiRel(blab_chatbot_deepage, deepage, "messages")
@@ -62,11 +66,11 @@ title BLAB - Container Diagram
     BiRel(blab_chatbot_openai, openai_server, "messages", "HTTPS")
     BiRel(blab_chatbot_rasa, rasa, "messages")
 
-    Rel_U(google_news, blab_reporter, "")
-    Rel_U(tideschart, blab_reporter, "")
-    Rel_R(marine_traffic, blab_reporter, "")
-    Rel_D(mar_sem_fim, blab_reporter, "")
-    Rel_D(sismologia_usp, blab_reporter, "")
+    Rel_U(google_news, blab_reporter, "news articles")
+    Rel_U(tideschart, blab_reporter, "tide data")
+    Rel_R(marine_traffic, blab_reporter, "vessel position data")
+    Rel_D(mar_sem_fim, blab_reporter, "news data")
+    Rel_D(sismologia_usp, blab_reporter, "earthquake data")
 
 
 
