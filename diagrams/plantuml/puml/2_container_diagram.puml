@@ -16,11 +16,11 @@ title BLAB - Container Diagram
         System_Boundary(blab_chat, "BLAB Chat") {
             Container(blab_controller, "BLAB Controller")
 
+            Container(blab_chatbot_watson, "BLAB Bot Client for Watson Assistant")
             Container(blab_chatbot_deepage, "BLAB Bot Client for DEEPAGÉ")
             Container(blab_chatbot_haystack, "BLAB Bot Client for Haystack")
-            Container(blab_chatbot_watson, "BLAB Bot Client for Watson Assistant")
-            Container(blab_chatbot_openai, "BLAB Bot Client for OpenAI")
             Container(blab_chatbot_rasa, "BLAB Bot Client for Rasa")
+            Container(blab_chatbot_openai, "BLAB Bot Client for OpenAI")
             Container(blab_chatbot_example, "BLAB Bot Client - Example")
 
             ContainerDb(blab_controller_database, "BLAB database")
@@ -60,11 +60,11 @@ title BLAB - Container Diagram
     BiRel(human_robotics_robot, human_robotics_server, "messages", "WebSocket, HTTP(S)")
     BiRel(human_robotics_server, blab_client_human_robotics, "messages", "HTTP(S)")
     BiRel(blab_client_human_robotics, blab_controller, "messages", "WebSocket")
+    BiRel(blab_chatbot_watson, blab_controller, "messages", "WebSocket")
     BiRel(blab_chatbot_deepage, blab_controller, "messages", "WebSocket")
     BiRel(blab_chatbot_haystack, blab_controller, "messages", "WebSocket")
-    BiRel(blab_chatbot_watson, blab_controller, "messages", "WebSocket")
-    BiRel(blab_chatbot_openai, blab_controller, "messages", "WebSocket")
     BiRel(blab_chatbot_rasa, blab_controller, "messages", "WebSocket")
+    BiRel(blab_chatbot_openai, blab_controller, "messages", "WebSocket")
     BiRel(blab_chatbot_example, blab_controller, "messages", "WebSocket")
     Rel_U(blab_reporter, blab_reporter_twitter, "tweets")
     Rel_U(blab_reporter_twitter, blab_frontend, "tweets")
@@ -72,14 +72,14 @@ title BLAB - Container Diagram
 
     BiRel(blab_chatbot_deepage, deepage, "messages")
     BiRel(blab_chatbot_haystack, haystack, "messages")
-    BiRel(blab_chatbot_watson, watson_server, "messages", "HTTPS")
+    BiRel(blab_chatbot_watson, watson_server, "messages", "WebSocket, HTTPS")
     BiRel(blab_chatbot_openai, openai_server, "messages", "HTTPS")
     BiRel(blab_chatbot_rasa, rasa, "messages")
 
     Rel_U(google_news, blab_reporter, "news articles")
     Rel_U(tideschart, blab_reporter, "tide data")
     Rel_R(marine_traffic, blab_reporter, "vessel position data")
-    Rel_D(mar_sem_fim, blab_reporter, "news data")
+    Rel_D(mar_sem_fim, blab_reporter, "news articles")
     Rel_D(sismologia_usp, blab_reporter, "earthquake data")
 
 

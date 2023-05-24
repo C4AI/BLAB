@@ -1,5 +1,7 @@
 # BLAB
 
+<!-- Run `make` to rebuild the diagrams. --> 
+
 This repository provides an overview of BLAB (BLue Amazon Brain) and its components. BLAB has not been deployed to
 production at the time of writing, but its source is available and you can install some or all of its components on your
 PC or server.
@@ -39,17 +41,16 @@ The controller contains two basic bots (ECHO and Calculator) for demonstration p
 In order to integrate other bots, see
 [these instructions](../../../blab-controller/blob/main/ADDING_BOTS.md).
 
-So far, we have written the intermediate layers to integrate BLAB Controller with:
+We have written the intermediate layers to integrate BLAB Controller with
+a few answerers.
 
-1. [Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant):
-   see the repository [Watson Assistant bot for BLAB](../../../blab-chatbot-watson). You will need the credentials to
-   access the Watson assistants (see [documentation from IBM](https://cloud.ibm.com/apidocs/assistant-v2)).
-
-
-2. [DEEPAGÉ](../../../deepage): A question answering system focused on the Portuguese language, combining in novel ways
-   the BM25 algorithm, a sparse retrieval technique, with PTT5, a pre-trained state-of-the-art language model. See the
-   repository [DEEPAGÉ bot for BLAB](../../../blab-chatbot-deepage). You will need the trained model and the data for
-   the retriever.
+| Service/Framework                                                               | Description                                                                                                                                                                                                                                                                                                                                                                         | BLAB client                                                   | Requirements                  |
+|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|-------------------------------|
+| [IBM Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant) | *"Watson Assistant is a platform built for business users, so your teams can design, deploy and manage conversational AI"* [[definition source]](https://www.ibm.com/downloads/cas/ZDJDQLGV)  [[documentation]](https://cloud.ibm.com/apidocs/assistant-v2)                                                                                                                         | [Watson Assistant bot for BLAB](../../../blab-chatbot-watson) | IBM credentials               |
+| [DEEPAGÉ](../../../deepage)                                                     | DEEPAGÉ is a set of *“QA systems that combine in novel ways the BM25 algorithm, a sparse retrieval technique, with PTT5, a pre-trained state-of-the-art language model”* to answer *“questions in Portuguese about the Brazilian Environment”* [[paper]](https://doi.org/10.1007/978-3-030-91699-2_29) [[preprint]](https://doi.org/10.48550/arXiv.2110.10015)                      | [DEEPAGÉ bot for BLAB](../../../blab-chatbot-deepage)         | trained model and corpus data |                              |
+| [Haystack](https://haystack.deepset.ai/)                                        | *“Haystack is an open-source framework for building search systems that work intelligently over large document collections”*  [[definition source]](https://haystack.deepset.ai/overview/intro) [[documentation]](https://docs.haystack.deepset.ai/docs)                                                                                                                            | [Haystack bot for BLAB](../../../blab-chatbot-haystack)       | trained model and corpus data |
+| [Rasa](https://rasa.com/)                                                       | Rasa is *“open source framework for building chat and voice-based AI assistants”* [[documentation]](https://rasa.com/docs/rasa/)                                                                                                                                                                                                                                                    | [Rasa bot for BLAB](../../../blab-chatbot-rasa)               | model and local endpoint      |
+| [OpenAI models](https://platform.openai.com/docs/models)                        | OpenAI models _“are advanced language processing tools that can generate, classify, and summarize text with high levels of coherence and accuracy”_ _“using a technology called deep learning, which leverages large amounts of data to train an AI system”_ [[definition source]](https://openai.com/research/overview) [[documentation]](https://platform.openai.com/docs/models) | [OpenAI bot for BLAB](../../../blab-chatbot-openai)           | OpenAI credentials            |
 
 If you want to integrate other bots with BLAB, see [this generic example](../../../blab-chatbot-example).
 
@@ -66,10 +67,10 @@ BLAB-Wiki is a set of curated texts in Portuguese about the Blue Amazon that can
 conversational agents. They have been written by undergraduate Oceanography students and revised by experts. Some of the
 texts are available at [a temporary server](https://c2dt02.duckdns.org/w/index.php) (only preliminary versions).
 
-
 ## 2. Published papers
 
 1. [_The BLue Amazon Brain (BLAB): A Modular Architecture of Services about the Brazilian Maritime
    Territory_](https://oceania.inria.cl/assets/pdfs/aimocc22/paper-05.pdf), published in [AIMOCC 2022 \(_AI: Modeling
    Oceans and Climate Change_\)](https://oceania.inria.cl/#aimocc-2022), which was one of
    the [IJCAI 2022](https://ijcai-22.org/) workshops.
+   A [preprint](https://doi.org/10.48550/arXiv.2209.07928) is also availabele.
